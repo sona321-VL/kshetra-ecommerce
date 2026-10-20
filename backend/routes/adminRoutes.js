@@ -1,0 +1,15 @@
+import express from "express";
+import { protect, admin } from "../middleware/authMiddleware.js";
+import {
+  getDashboardStats,
+ 
+} from "../controllers/adminController.js";
+
+const router = express.Router();
+
+/* ===== DASHBOARD ===== */
+router.get("/dashboard", protect, admin, getDashboardStats);
+
+
+
+export default router;
